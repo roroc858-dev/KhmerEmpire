@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: khmerempire-web
+    runtime: node
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: npm ci && npm run db:generate && npm run db:migrate && npm run web:build
+    startCommand: npm --prefix apps/web run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.20.0
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DIRECT_URL
+        sync: false
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: APP_URL
+        sync: false
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: STORE_CURRENCY
+        value: USD
+      - key: MANUAL_PAYMENT_INSTRUCTIONS
+        sync: false
+      - key: SERVER_CREDENTIAL_ENCRYPTION_KEY
+        generateValue: true

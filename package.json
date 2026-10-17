@@ -9,8 +9,12 @@
     "web:build": "npm --prefix apps/web run build",
     "web:lint": "npm --prefix apps/web run lint",
     "plugin:build": "mvn -f plugin/KhmerEmpire/pom.xml clean package",
-    "db:generate": "npx prisma generate --schema database/prisma/schema.prisma",
-    "db:migrate": "npx prisma migrate deploy --schema database/prisma/schema.prisma",
+    "db:generate": "prisma generate --schema database/prisma/schema.prisma",
+    "db:migrate": "prisma migrate deploy --schema database/prisma/schema.prisma",
     "db:seed": "node database/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "prisma": "6.19.3"
   }
 }
