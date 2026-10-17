@@ -1,0 +1,15 @@
+backend:
+  base-url: "https://example.com"
+  server-token: "change-me"
+
+server:
+  name: "KhmerEmpire-Server"
+  enabled: true
+
+plugins:
+  luckperms: true
+  excellentcrates: true
+
+delivery:
+  enabled: true
+  heartbeat-seconds: 30

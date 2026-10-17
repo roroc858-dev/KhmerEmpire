@@ -1,0 +1,14 @@
+name: KhmerEmpire
+version: 1.0.0
+main: com.khmerempire.plugin.KhmerEmpirePlugin
+api-version: '1.21'
+commands:
+  khmerempire:
+    description: KhmerEmpire control and verification commands.
+    usage: /khmerempire help
+    permission: khmerempire.use
+permissions:
+  khmerempire.use:
+    default: true
+  khmerempire.admin:
+    default: op
